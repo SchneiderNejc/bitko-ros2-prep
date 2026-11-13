@@ -4,7 +4,7 @@ package_name = 'bitko_care_demo'
 
 setup(
     name=package_name,
-    version='0.0.0',
+    version='0.0.1',
     packages=find_packages(exclude=['test']),
     data_files=[
         ('share/ament_index/resource_index/packages',
@@ -13,17 +13,15 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='nejc',
-    maintainer_email='nejc.sch@gmail.com',
-    description='TODO: Package description',
+    maintainer='Nejc Schneider',
+    maintainer_email='dev@example.com',
+    description='Care facility task pub/sub simulation for Bitko',
     license='Apache-2.0',
-    extras_require={
-        'test': [
-            'pytest',
-        ],
-    },
+    tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'dispatcher = bitko_care_demo.facility_dispatcher:main',
+            'executor = bitko_care_demo.bitko_executor:main',
         ],
     },
 )
